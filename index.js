@@ -9,6 +9,7 @@ function createWindow() {
     x: display.x(),
     y: display.y(),
     frame: false, // Remove window frame
+    alwaysOnTop: true, // Set alwaysOnTop to true
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true, // Added to enable remote module access
