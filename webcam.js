@@ -2,7 +2,7 @@
 const videoElement = document.getElementById("webcam");
 
 navigator.mediaDevices
-  .getUserMedia({ video: true })
+  .getUserMedia({ audio: false, video: true })
   .then((stream) => {
     videoElement.srcObject = stream;
   })
