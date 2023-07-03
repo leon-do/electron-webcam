@@ -12,7 +12,7 @@ function createWindow() {
     height: resolution.height(),
     x: resolution.x(),
     y: resolution.y(),
-    titleBarStyle: "default", // "hiddenInset", 
+    titleBarStyle: "default", // "hiddenInset",
     alwaysOnTop: true, // Set alwaysOnTop to true
   });
 
@@ -28,7 +28,3 @@ function createWindow() {
 
 // When Electron has finished initialization and is ready to create browser windows
 app.on("ready", createWindow);
-
-app.on("activate", () => {
-  console.log("DFSDF");
-});

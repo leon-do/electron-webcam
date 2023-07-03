@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const path = "json/resolution.json"
+const path = "json/resolution.json";
 
 module.exports = resolution = {
   height: () => {
