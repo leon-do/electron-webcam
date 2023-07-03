@@ -20,6 +20,11 @@ module.exports = function setMenu(mainWindow) {
         },
         { type: "separator" },
         {
+          label: "Toggle Full Screen",
+          role: "toggleFullScreen",
+        },
+        { type: "separator" },
+        {
           label: "Reload",
           role: "reload",
         },
@@ -27,14 +32,10 @@ module.exports = function setMenu(mainWindow) {
           label: "Force Reload",
           role: "forceReload",
         },
-        {
-          label: "Dev Developer Tools",
-          role: "toggleDevTools",
-        },
         { type: "separator" },
         {
-          label: "Toggle Full Screen",
-          role: "toggleFullScreen",
+          label: "Toggle Developer Tools",
+          role: "toggleDevTools",
         },
       ],
     },
