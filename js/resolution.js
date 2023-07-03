@@ -1,9 +1,11 @@
 const fs = require("fs");
 
-module.exports = display = {
+const path = "json/resolution.json"
+
+module.exports = resolution = {
   height: () => {
     try {
-      const data = fs.readFileSync("./display.json", "utf8");
+      const data = fs.readFileSync(path, "utf8");
       return JSON.parse(data).height;
     } catch {
       return 500;
@@ -11,7 +13,7 @@ module.exports = display = {
   },
   width: () => {
     try {
-      const data = fs.readFileSync("./display.json", "utf8");
+      const data = fs.readFileSync(path, "utf8");
       return JSON.parse(data).width;
     } catch {
       return 500;
@@ -19,7 +21,7 @@ module.exports = display = {
   },
   x: () => {
     try {
-      const data = fs.readFileSync("./display.json", "utf8");
+      const data = fs.readFileSync(path, "utf8");
       return JSON.parse(data).x;
     } catch {
       return undefined;
@@ -27,7 +29,7 @@ module.exports = display = {
   },
   y: () => {
     try {
-      const data = fs.readFileSync("./display.json", "utf8");
+      const data = fs.readFileSync(path, "utf8");
       return JSON.parse(data).y;
     } catch {
       return undefined;
@@ -37,12 +39,12 @@ module.exports = display = {
     mainWindow.on("resize", () => {
       const [x, y] = mainWindow.getPosition();
       const { width, height } = mainWindow.getBounds();
-      fs.writeFileSync("./display.json", JSON.stringify({ width, height, x, y }));
+      fs.writeFileSync(path, JSON.stringify({ width, height, x, y }));
     });
     mainWindow.on("move", () => {
       const [x, y] = mainWindow.getPosition();
       const { width, height } = mainWindow.getBounds();
-      fs.writeFileSync("./display.json", JSON.stringify({ width, height, x, y }));
+      fs.writeFileSync(path, JSON.stringify({ width, height, x, y }));
     });
   },
 };

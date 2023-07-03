@@ -3,10 +3,6 @@ html {
 }
 
 video {
-  /* drag to move */
-  -webkit-app-region: drag;
-  cursor: move;
-
   position: absolute;
   top: 0;
   left: 0;
