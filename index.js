@@ -5,14 +5,13 @@ const setMenu = require("./js/setMenu");
 function createWindow() {
   // Create a new browser window
   const mainWindow = new BrowserWindow({
-    title: "",
     minHeight: 150,
     minWidth: 150,
     width: resolution.width(),
     height: resolution.height(),
     x: resolution.x(),
     y: resolution.y(),
-    titleBarStyle: "default", // "hiddenInset",
+    titleBarStyle: "hiddenInset",
     alwaysOnTop: true, // Set alwaysOnTop to true
   });
 
