@@ -8,7 +8,6 @@ body {
 #webcam {
   /* drag to move */
   -webkit-app-region: drag;
-  cursor: move;
 
   position: absolute;
   top: 0;
