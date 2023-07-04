@@ -29,11 +29,6 @@ module.exports = function setMenu(mainWindow) {
           role: "reload",
         },
         {
-          label: "Force Reload",
-          role: "forceReload",
-        },
-        { type: "separator" },
-        {
           label: "Toggle Developer Tools",
           role: "toggleDevTools",
         },

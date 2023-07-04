@@ -1,50 +1,45 @@
-const fs = require("fs");
-
-const path = "json/resolution.json";
+const Store = require("electron-store");
+const store = new Store();
 
 module.exports = resolution = {
   height: () => {
     try {
-      const data = fs.readFileSync(path, "utf8");
-      return JSON.parse(data).height;
+      return store.get("height");
     } catch {
       return 500;
     }
   },
   width: () => {
     try {
-      const data = fs.readFileSync(path, "utf8");
-      return JSON.parse(data).width;
+      return store.get("width");
     } catch {
       return 500;
     }
   },
   x: () => {
     try {
-      const data = fs.readFileSync(path, "utf8");
-      return JSON.parse(data).x;
+      return store.get("x");
     } catch {
       return undefined;
     }
   },
   y: () => {
     try {
-      const data = fs.readFileSync(path, "utf8");
-      return JSON.parse(data).y;
+      return store.get("y");
     } catch {
       return undefined;
     }
   },
   save(mainWindow) {
     mainWindow.on("resize", () => {
-      const [x, y] = mainWindow.getPosition();
       const { width, height } = mainWindow.getBounds();
-      fs.writeFileSync(path, JSON.stringify({ width, height, x, y }));
+      store.set("width", width);
+      store.set("height", height);
     });
     mainWindow.on("move", () => {
       const [x, y] = mainWindow.getPosition();
-      const { width, height } = mainWindow.getBounds();
-      fs.writeFileSync(path, JSON.stringify({ width, height, x, y }));
+      store.set("x", x);
+      store.set("y", y);
     });
   },
 };
